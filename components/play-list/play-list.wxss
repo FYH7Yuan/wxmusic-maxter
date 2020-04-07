@@ -1,0 +1,64 @@
+
+.list-wrapper {
+  position: relative;
+  height: 100rpx;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  /* border: 2rpx solid black; */
+}
+.list-wrapper:active{
+  background-color:#ccc; 
+}
+
+.song-index {
+  line-height: 100rpx;
+  color: #aaa;
+  position: absolute;
+  left: 2vw;
+  font-size: 30rpx;
+}
+
+.song-index-long {
+  line-height: 100rpx;
+  color: #aaa;
+  position: absolute;
+  left: 1vw;
+  font-size: 24rpx;
+}
+
+.song-content {
+  position: absolute;
+  height: 100rpx;
+  width: 92vw;
+  left: 8vw;
+}
+
+.song-name {
+  position: absolute;
+  top: 16rpx;
+  font-size: 30rpx;
+  display: block;
+  width:80vw;
+  height:34rpx;
+  line-height: 30rpx;
+  overflow: hidden;
+  font-family:fantasy;
+}
+
+.singer-album-warpper {
+  position: absolute;
+  color: #aaa;
+  top:56rpx;
+  font-size: 24rpx;
+  overflow: hidden;
+  width:80vw;
+  display: block;
+  height:30rpx;
+}
+
+.add {
+  position: absolute;
+  right: 4vw;
+  top: 34rpx;
+}

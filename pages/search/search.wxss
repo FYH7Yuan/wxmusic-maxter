@@ -1,0 +1,30 @@
+.icon-position {
+  position: absolute;
+  right: 40rpx;
+  bottom: 12rpx;
+  color: #fff;
+}
+
+.search-wrapper {
+  padding: 10rpx 30rpx;
+  position: relative;
+}
+
+.search-wrapper .search {
+  border-radius: 10rpx;
+  border: 1rpx solid #eee;
+  font-size: 12px;
+}
+
+.placeholder {
+  font-size: 20rpx;
+  text-align: center;
+}
+
+.search-wrapper .icon-search {
+  position: absolute;
+  right: 40rpx;
+}
+.search-list-warpper{
+  background-color: #fff;
+}

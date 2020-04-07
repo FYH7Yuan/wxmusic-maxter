@@ -1,0 +1,15 @@
+<block wx:for="{{songs}}" wx:key="id" wx:for-item="song" wx:for-index="songIndex">
+  <view class="list-wrapper {{num==songIndex?'active':''}}" decode="{{true}}" data-index="{{songIndex}}" bindtap="toPlayer" data-index="{{songIndex}}">
+    <text class="{{songIndex<99?'song-index':'song-index-long'}}">{{songIndex+1}}</text>
+    <view class="song-content">
+      <text class="song-name">{{song.name}}</text>
+      <view class="singer-album-warpper">
+        <text class="singer-album" wx:for="{{song.ar?song.ar:song.artists}}" wx:key="id" wx:for-item="singer" wx:for-index="singerIndex">{{singerIndex>=((song.ar?song.ar.length:song.artists.length)-1)?singer.name:(singer.name+"/")}}</text>\t-\t{{song.al.name?song.al.name:song.album.name}}
+      </view>
+      <view class="add" catchtap="addSongs" data-song="{{song}}">
+        <!-- <i class="iconfont icon-tianjia"></i> -->+
+        <!-- <slot></slot> -->
+      </view>
+    </view>
+  </view>
+</block>

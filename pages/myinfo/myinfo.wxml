@@ -1,0 +1,4 @@
+<view class="text" wx:if="{{mySheet.length ==0 ? true: false}}">暂无歌曲哦~</view>
+<view class="wrapper" style="background-color:#fff">
+  <play-list songs="{{mySheet}}"></play-list>
+</view>

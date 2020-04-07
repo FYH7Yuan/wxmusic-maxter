@@ -1,0 +1,189 @@
+.icon-position {
+  position: absolute;
+  right: 40rpx;
+  bottom: 12rpx;
+  color: #fff;
+}
+
+.search-wrapper {
+  padding: 10rpx 30rpx;
+  position: relative;
+}
+
+.search-wrapper .search {
+  border-radius: 10rpx;
+  border: 1rpx solid #eee;
+  font-size: 12px;
+}
+
+.placeholder {
+  font-size: 20rpx;
+  text-align: center;
+}
+
+.search-wrapper .icon-search {
+  position: absolute;
+  right: 40rpx;
+}
+
+.slide-image {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+}
+
+.songsheet-wrapper {
+  margin-top: 20rpx;
+  overflow: hidden;
+  /* height: 280rpx; *//* border: 1px solid #ccc; */
+}
+
+.songsheet-wrapper .songsheet-list {
+  display: flex;
+  overflow-x: auto;
+  justify-content: space-between;
+  padding-bottom: 40rpx;
+  padding-left: 3vw;
+  /* height: 280rpx; */
+}
+
+.songsheet-wrapper .songsheet-list .songsheet {
+  position: relative;
+  /* height: 280rpx; */
+  text-align: center;
+  font-size: 12rpx;
+  /* color: #283b42; *//* font-weight: bold; */
+  flex-basis: 172rpx;
+  flex-shrink: 0;
+  /* white-space: nowrap; */
+  margin-right: 20rpx;
+}
+
+.songsheet-wrapper .songsheet-list .songsheet .played-count {
+  color: #fff;
+  position: absolute;
+  right: 4rpx;
+  top: 0;
+  font-size: 20rpx;
+  z-index: 3;
+}
+
+.songsheet-wrapper .songsheet-list .songsheet .played-count .icon-size {
+  height: 10rpx;
+  font-size: 24rpx;
+  line-height: 10rpx;
+}
+
+.songsheet-wrapper .songsheet-list .songsheet .cover {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 10rpx;
+  display: block;
+}
+
+.content {
+  margin-top: 30rpx;
+}
+
+.content .navbar {
+  display: flex;
+  margin-top: 30rpx;
+  align-items: space-around;
+  /* border: 1px solid black; */
+}
+
+.content .navbar>view {
+  flex: 1;
+  position: relative;
+  /* border: 1px solid black; */
+}
+
+.content .navbar>view>image {
+  height: 70rpx;
+  width: 70rpx;
+}
+
+.sheet-recommend2 {
+  font-size: 20rpx;
+  color: #eee;
+  display: block;
+  margin-left: 3vw;
+}
+
+.sheet-recommend1 {
+  color: #fff;
+  display: block;
+  font-weight: bold;
+  margin-left: 3vw;
+}
+
+.songsheet-wrapper .songsheet-list .songsheet .sheet-title {
+  font-size: 22rpx;
+  color: #fff;
+  width: 220rpx;
+  /* height:48rpx; */
+  display: block;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.content .rec-songs-wrapper {
+  height: 36vh;
+  width: 100vw;
+  position: relative;
+  margin-top: 2vh;
+}
+
+.content .rec-songs-wrapper .rec-item {
+  position: absolute;
+  left: 3vw;
+  width: 94vw;
+  height: 36vh;
+}
+
+.content .rec-songs-wrapper .rec-item .rec-song {
+  height: 12vh;
+  width: 94vw;
+  position: relative;
+}
+
+.content .rec-songs-wrapper .rec-item .rec-song .rec-song-cover {
+  height: 10vh;
+  width: 10vh;
+  border-radius: 10rpx;
+  position: absolute;
+  top: 1vh;
+}
+
+.content .rec-songs-wrapper .rec-item .rec-song .rec-song-title {
+  width: 60vw;
+  margin-left: 12vh;
+  padding-top: 2vh;
+  overflow: hidden;
+}
+
+.content .rec-songs-wrapper .rec-item .rec-song .rec-song-title .rec-song-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 60vw;
+  color: #fff;
+  font-size: 26rpx;
+  height: 26rpx;
+  line-height: 26rpx;
+}
+
+.content .rec-songs-wrapper .rec-item .rec-song .rec-song-title .rec-song-arts {
+  font-size: 20rpx;
+  margin-top: 2vh;
+  color: #fff;
+}
+
+.content .rec-songs-wrapper .rec-item .rec-song .rec-song-add {
+  position: absolute;
+  top: 0;
+  right: 2vw;
+  color: #fff;
+  line-height: 12vh;
+  font-size: 30rpx;
+}

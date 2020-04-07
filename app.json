@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/myinfo/myinfo",
+    "pages/player/player",
+    "pages/songlist/songlist",
+    "pages/search/search"
+  ],
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1cbbb4",
+    "navigationBarTitleText": "幻听",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#919191",
+    "selectedColor": "#fff",
+    "backgroundColor": "#1cbbb4",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "发现",
+        "iconPath": "static/image/home-hide.png",
+        "selectedIconPath": "static/image/home-active.png"
+      },
+      {
+        "pagePath": "pages/myinfo/myinfo",
+        "text": "我",
+        "iconPath": "static/image/me-hide.png",
+        "selectedIconPath": "static/image/me-active.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}

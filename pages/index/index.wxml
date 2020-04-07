@@ -1,0 +1,45 @@
+<view class="search-wrapper" catchtap="toSearch">
+  <input class="search" placeholder="输入歌手名、歌曲名搜索" placeholder-style="color: #eee;" disabled placeholder-class="placeholder" />
+  <i class="iconfont icon-sousuo icon-position"></i>
+</view>
+<view class="swiper">
+  <my-slider swiper="{{swiper}}" flag="{{ flag }}"></my-slider>
+</view>
+<view class="content">
+  <text class="sheet-recommend1">推荐歌单</text>
+  <text class="sheet-recommend2">为你精挑细选</text>
+  <view class=" songsheet-wrapper ">
+    <view class="songsheet-list">
+      <block wx:for="{{songSheetList}}" wx:key="id">
+        <view class="songsheet" catchtap="toSongList" data-sheetindex="{{index}}">
+          <view class="played-count">
+            <i class="iconfont icon-right icon-size"></i>{{playCountArr[index]}}
+          </view>
+          <image wx:if="{{item.coverImgUrl.length>0}}" class="cover" src="{{item.coverImgUrl}}"></image>
+          <text class="sheet-title">{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+  <text class="sheet-recommend1">新曲精选</text>
+  <text class="sheet-recommend2">为你精挑细选</text>
+  <swiper class="rec-songs-wrapper" next-margin="30rpx">
+    <block wx:for="{{recommondSongsList}}" wx:key="index" wx:for-item="pageSong" wx:for-index="pagedex">
+      <swiper-item class="rec-item" decode="{{true}}">
+        <block wx:for="{{pageSong}}" wx:key="index" wx:for-item="song" wx:for-index="songdex">
+          <view class="rec-song">
+            <image class="rec-song-cover" src="{{song.al.picUrl}}"></image>
+            <view class="rec-song-title">
+              <view class="rec-song-name">{{song.name}}</view>
+              <view class="rec-song-arts">{{song.ar[0].name}}</view>
+            </view>
+            <view class="rec-song-add" catchtap="addSongs" data-song="{{song}}">
+              <i class="iconfont icon-tianjia"></i>
+            </view>
+          </view>
+        </block>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view style="height:100rpx;text-align:center;color:#fff;line-height:100rpx;font-size:20rpx;">到底啦~</view>
+</view>

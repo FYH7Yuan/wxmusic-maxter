@@ -1,0 +1,26 @@
+<view class="bg-wrap">
+  <view class="sheet-bg" style="background-image:url('{{sheetData.coverImgUrl}}')"></view>
+</view>
+<view class="container" bindscroll="scroll" scroll-top="{{scrollTop}}">
+
+  <view class="header" wx:if="{{scrollTop>285?true:false}}"></view>
+  <view class="title" style="position: fixed" wx:if="{{scrollTop>285?true:false}}">{{sheetData.name}}</view>
+  <i class="iconfont icon-houtui icon-position" bindtap="backPage" style="position: fixed" wx:if="{{scrollTop>285?true:false}}"></i>
+
+  <view class="sheet">
+    <view class="title" style="position: absolute">歌单</view>
+    <i class="iconfont icon-houtui icon-position" bindtap="backPage" style="position: absolute"></i>
+    <image class="coverImg" src="{{sheetData.coverImgUrl}}"></image>
+    <view class="sheet-title">{{sheetData.name}}</view>
+    <view class="creator">
+      <image class="creator-img" src="{{sheetData.creator.avatarUrl}}"></image>
+      <view class="creator-name">{{sheetData.creator.nickname}}</view>
+    </view>
+    <view class="copywriter">{{sheetData.copywriter}}</view>
+  </view>
+  <view class="song-list-wrapper">
+    <play-list songs="{{songList}}">
+    </play-list>
+    <view class="bottom">已经到底部啦~</view>
+  </view>
+</view>

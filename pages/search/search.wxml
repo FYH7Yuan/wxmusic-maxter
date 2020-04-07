@@ -1,0 +1,8 @@
+<view class="search-wrapper" style="background-color:#1cbbb4">
+  <input class="search" placeholder="输入歌手名、歌曲名搜索" placeholder-style="color: #eee;" placeholder-class="placeholder" bindinput="getSearchData" />
+  <i class="iconfont icon-sousuo icon-position"></i>
+</view>
+<view class="search-list-wrapper" style="background-color:#fff">
+  <play-list songs="{{songs}}">
+  </play-list>
+</view>

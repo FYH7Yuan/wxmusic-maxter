@@ -1,0 +1,68 @@
+<view class="bg-wrap">
+  <view class="fuzzy-bg" style="background-image:url('{{currentSong.al.picUrl ||currentSong.album.picUrl}}')"></view>
+  <view class="mask"></view>
+</view>
+<view class="container">
+  <view class="header">
+    <view class="back" bindtap="navBack">
+      <icon class="iconfont icon-houtui"></icon>
+    </view>
+    <view class="title">{{currentSong.name||'暂无正在播放歌曲'}}</view>
+    <view class="author">
+      <text class="singer-album" wx:for="{{currentSong.ar?currentSong.ar:currentSong.artists}}" wx:key="id" wx:for-item="singer" wx:for-index="singerIndex">{{singerIndex>=((currentSong.ar?currentSong.ar.length:currentSong.artists.length)-1)?singer.name:(singer.name+"/")}}</text>
+    </view>
+  </view>
+  <view class="lyric-wrapper" hidden="{{!isShowLyric}}" catchtap="onToggleShowLyric">
+    <view class="lyric-inner" style="top:-{{lyricTop}}rpx">
+      <block wx:for="{{lyric}}" wx:key="index">
+        <view class="lyric-row {{index == activeLyricIndex?'active':''}}">{{item.lrc||"暂无歌词"}}</view>
+      </block>
+    </view>
+  </view>
+  <view class="cover-wrapper" hidden="{{isShowLyric}}" catchtap="onToggleShowLyric">
+    <view class=" cd {{status}}">
+      <image class="cover" src="{{currentSong.al.picUrl || currentSong.album.picUrl}}"></image>
+    </view>
+
+  </view>
+  <view class="control-wrap">
+
+    <view class="progress-wrapper">
+      <text class="currentTime">{{currentTime || "00:00"}}</text>
+      <view class="progress">
+        <slider backgroundColor="#ccc" activeColor="#fff" block-size="12" value="{{sliderValue}}" max="{{sliderMax}}" bind:change="dragProgressBar"></slider>
+      </view>
+      <text class="fullTime">{{duration||"00:00"}}</text>
+    </view>
+    <view class="flex control-button">
+      <view class="flex-sub padding-sm margin-xs text-center" catch:tap="changeMode">
+        <icon class="iconfont {{playMode}} white"></icon>
+      </view>
+      <view class="flex-sub padding-sm margin-xs  text-center" catch:tap="prev">
+        <icon class="iconfont icon-shangyishou white"></icon>
+      </view>
+      <view class="flex-sub padding-sm margin-xs  text-center" catch:tap="playStatusChange">
+        <i class="iconfont {{playIcon}} white"></i>
+      </view>
+      <view class="flex-sub padding-sm margin-xs  text-center" catch:tap="next">
+        <icon class="iconfont icon-xiayishou white"></icon>
+      </view>
+      <view class="flex-sub padding-sm margin-xs  text-center" catch:tap="showSongsList">
+        <icon class="iconfont icon-yinpinliebiao white"></icon>
+      </view>
+    </view>
+  </view>
+  <view class="songs-list-wrapper {{isShowList?'show-list':'hide-list'}}" decode="{{true}}">
+    <view class="songs-list-title">播放队列({{songsList.length}}首)</view>
+    <view class="songs-list ">
+      <block wx:for="{{songsList}}" wx:key="id" wx:for-item="song" wx:for-index="songIndex">
+        <view class="song-wrapper" data-index="{{songIndex}}" catchtap="tapChangeSong">
+          <text class="iconfont {{songIndex==currentIndex?'icon-bofang1':''}} yellow" hidden=""></text>
+          <text class="song {{songIndex==currentIndex?'yellow':''}}">{{song.name}}\t-\t</text>
+          <text class="singers {{songIndex==currentIndex?'yellow':''}}" wx:for="{{song.ar?song.ar:song.artists}}" wx:key="id" wx:for-item="singer" wx:for-index="singerIndex">{{singerIndex>=((song.ar?song.ar.length:song.artists.length)-1)?singer.name:(singer.name+"/")}}</text>
+        </view>
+      </block>
+    </view>
+    <view class="close" catch:tap="showSongsList">关闭</view>
+  </view>
+</view>

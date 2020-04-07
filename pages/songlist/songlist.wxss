@@ -1,0 +1,137 @@
+.container {
+  width: 100%;
+  height: 100%;
+  /* position: absolute;
+  left: 0;
+  top: 0; */
+  overflow-x: hidden;
+}
+
+.bg-wrap {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 650rpx;
+}
+
+.sheet-bg {
+  /* position: absolute;
+  top: 0;
+  left:0; */
+  width: 100vw;
+  height: 650rpx;
+  background-size: cover;
+  filter: blur(80rpx);
+  z-index: -1;
+  transform: scale(1.8);
+}
+
+.sheet {
+  width: 100%;
+  height: 600rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: white;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100rpx;
+  z-index: 2;
+  background-color: #000;
+  background-size: cover;
+  filter: blur(70rpx);
+  transform: scale(1.4);
+  overflow: hidden;
+}
+
+.icon-position {
+  top: 70rpx;
+  left: 35rpx;
+  z-index: 3;
+  color: #fff;
+}
+
+.title {
+  top: 70rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 26rpx;
+  z-index: 3;
+  color: #fff;
+}
+
+.sheet .creator {
+  position: absolute;
+  width: 300rpx;
+  top: 310rpx;
+  right: 50rpx;
+}
+
+.sheet .creator .creator-img {
+  position: absolute;
+  right: 250rpx;
+  height: 50rpx;
+  width: 50rpx;
+  border-radius: 50%;
+}
+
+.sheet .creator .creator-name {
+  position: absolute;
+  left: 64rpx;
+  color: #aaa;
+  line-height: 50rpx;
+  font-size: 24rpx;
+}
+
+.sheet .sheet-title {
+  position: absolute;
+  width: 300rpx;
+  top: 180rpx;
+  right: 50rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.sheet .coverImg {
+  position: absolute;
+  top: 180rpx;
+  left: 40rpx;
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 14rpx;
+}
+
+.sheet .copywriter {
+  position: absolute;
+  width: 300rpx;
+  top: 380rpx;
+  right: 50rpx;
+  font-size: 24rpx;
+  color: #aaa;
+}
+
+.song-list-wrapper {
+  position: absolute;
+  top: 600rpx;
+  left: 0;
+  height: auto;
+  overflow-x: hidden;
+  width: 100vw;
+  border-top: 2rpx solid #fff;
+  /* border-radius: 48rpx; */
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.bottom {
+  text-align: center;
+  color: #aaa;
+}

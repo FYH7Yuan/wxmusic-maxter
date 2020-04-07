@@ -1,0 +1,7 @@
+  <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="false" interval="5000" duration="500">
+  <block wx:if="swpier" wx:for="{{swiper}}" wx:key="id" >
+    <swiper-item class="swiper-img-wrapper">
+      <image src="{{item.pic}}" class="slide-image" data-index="{{index}}" />
+    </swiper-item>
+  </block>
+</swiper>
