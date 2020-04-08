@@ -86,7 +86,7 @@ Page({
   },
   recommendNewMusic() {
     util.get('http://192.168.3.6:3000/personalized/newsong').then(res => {
-      console.log(res)
+      // console.log(res)
       const songs = res.data.result;
       let songIds = ''
       for (let prop in songs) {
