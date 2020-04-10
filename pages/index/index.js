@@ -27,7 +27,7 @@ Page({
         return
       }
     }
-    app.mysheet = Object.assign([], app.mySheet.push(e.currentTarget.dataset.song));
+    app.mysheet = Object.assign([], app.mySheet.push(song));
     app.mySheetIdArr.push(song.id)
     wx.showToast({
       title: `添加成功`,
