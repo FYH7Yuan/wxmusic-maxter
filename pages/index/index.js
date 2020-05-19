@@ -56,7 +56,7 @@ Page({
     })
   },
   getSwiperData() {
-    util.get('http://192.168.3.6:3000/banner', {
+    util.get('http://localhost:3000/banner', {
       type: 2
     }).then(res => {
       // console.log(res)
@@ -66,7 +66,7 @@ Page({
     })
   },
   getSongSheet() {
-    util.get('http://192.168.3.6:3000/top/playlist/highquality', {
+    util.get('http://localhost:3000/top/playlist/highquality', {
       cat: '流行',
       limit: 10
     }).then(res => {
@@ -81,11 +81,10 @@ Page({
         playCountArr,
         flag: true
       })
-      // console.log(_that.data.songSheetList)
     })
   },
   recommendNewMusic() {
-    util.get('http://192.168.3.6:3000/personalized/newsong').then(res => {
+    util.get('http://localhost:3000/personalized/newsong').then(res => {
       // console.log(res)
       const songs = res.data.result;
       let songIds = ''
@@ -93,7 +92,7 @@ Page({
         prop == (songs.length - 1) ? songIds += songs[8].id : songIds += (songs[prop].id + ',');
       }
       console.log(songIds)
-      util.get('http://192.168.3.6:3000/song/detail', {
+      util.get('http://localhost:3000/song/detail', {
         ids: songIds
       }).then(res => {
         console.log(res)

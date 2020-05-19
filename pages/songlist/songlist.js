@@ -23,14 +23,12 @@ Page({
   getSonglist() {
     const sheetId = this.data.sheetData.id;
     const that = this
-    util.get('http://192.168.3.6:3000/playlist/detail', {
+    util.get('http://localhost:3000/playlist/detail', {
       id: sheetId
     }).then(res => {
-      console.log(res)
       that.setData({
         songList: res.data.playlist.tracks
       })
-      // console.log(that.data.songList)
     })
   },
   /**

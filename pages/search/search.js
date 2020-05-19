@@ -4,7 +4,7 @@ Page({
   getSearchData(e) {
     console.log(e)
     const value = e.detail.value;
-    util.get('http://192.168.3.6:3000/search', {
+    util.get('http://localhost:3000/search', {
       keywords: value
     }).then(res => {
       // console.log(res)
@@ -26,7 +26,7 @@ Page({
       prop == (songsIdArr.length - 1) ? songIds += songsIdArr[songsIdArr.length - 1] : songIds += (songsIdArr[prop] + ',');
     }
     console.log(songIds)
-    util.get('http://192.168.3.6:3000/song/detail', {
+    util.get('http://localhost:3000/song/detail', {
       ids: songIds
     }).then(res => {
       this.setData({

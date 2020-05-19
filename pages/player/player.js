@@ -1,13 +1,9 @@
 const app = getApp().globalData
 const util = require("../../utils/util.js");
-// const regeneratorRuntime = require('../../utils/runtime.js');
 const manager = wx.getBackgroundAudioManager();
 Page({
   //播放列表点击更换歌曲
   tapChangeSong(e) {
-    // wx.setStorageSync(
-    //   "currentIndex", e.currentTarget.dataset.index
-    // )
     app.currentIndex = e.currentTarget.dataset.index;
     this.init();
   },
@@ -97,22 +93,18 @@ Page({
   },
   //初始化
   init() {
-    console.log(app.songsList)
     let songsList = app.songsList || app.mySheet;
-    // let currentIndex = wx.getStorageSync('currentIndex');
     let currentIndex = app.currentIndex;
     let currentSong = (songsList && songsList[currentIndex]) || app.songlist[currentIndex];
-
     let duration = currentSong.dt || currentSong.duration;
 
 
-    console.log("-------------------初始化数据--------------------")
-    console.log(songsList, currentIndex)
+    // console.log("-------------------初始化数据--------------------")
+    // console.log(songsList, currentIndex)
     this.setData({
       currentSong,
       songsList,
-      currentIndex,
-      // singers
+      currentIndex
     })
     console.log(this.data.currentSong)
     this.getSongUrl(currentSong.id);
@@ -121,17 +113,16 @@ Page({
   //获取音乐URL
   getSongUrl(songId) {
     const that = this;
-    util.get('http://192.168.3.6:3000/song/url', {
+    util.get('http://localhost:3000/song/url', {
       id: songId
     }).then(res => {
       const url = res.data.data[0].url;
-      // console.log(url)
       that.createPlayer(url);
     })
   },
   //获取歌词
   getLyric(songId) {
-    util.get('http://192.168.3.6:3000/lyric', {
+    util.get('http://localhost:3000/lyric', {
       id: songId
     }).then(res => {
       console.log(res)
@@ -148,7 +139,7 @@ Page({
   },
   //创建播放器 监听播放事件
   createPlayer(songUrl) {
-    console.log(songUrl)
+    // console.log(songUrl)
     if (songUrl) {
       manager.src = songUrl;
       manager.title = this.data.currentSong.name;
@@ -190,7 +181,7 @@ Page({
         sliderValue: manager.currentTime,
         sliderMax: manager.duration
       })
-      console.log(this.data.currentTime, this.data.duration, this.data.sliderValue, this.data.sliderMax)
+      // console.log(this.data.currentTime, this.data.duration, this.data.sliderValue, this.data.sliderMax)
     })
     //结束时切歌
     manager.onEnded(() => {
@@ -259,16 +250,10 @@ Page({
   //不同播放模式下切歌时获取歌曲下标
 
   prev() {
-    // wx.setStorageSync(
-    //   "currentIndex", this.changeCurrentIndex('prev')
-    // )
     app.currentIndex = this.changeCurrentIndex('prev')
     this.init();
   },
   next() {
-    // wx.setStorageSync(
-    //   "currentIndex", this.changeCurrentIndex('next')
-    // )
     app.currentIndex = this.changeCurrentIndex('next')
     this.init();
   },

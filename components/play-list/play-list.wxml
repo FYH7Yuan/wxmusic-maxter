@@ -7,8 +7,7 @@
         <text class="singer-album" wx:for="{{song.ar?song.ar:song.artists}}" wx:key="id" wx:for-item="singer" wx:for-index="singerIndex">{{singerIndex>=((song.ar?song.ar.length:song.artists.length)-1)?singer.name:(singer.name+"/")}}</text>\t-\t{{song.al.name?song.al.name:song.album.name}}
       </view>
       <view class="add" catchtap="addSongs" data-song="{{song}}">
-        <!-- <i class="iconfont icon-tianjia"></i> -->+
-        <!-- <slot></slot> -->
+      +
       </view>
     </view>
   </view>
